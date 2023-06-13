@@ -1,0 +1,125 @@
+.header{
+  padding-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.title{
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  background: #6B9AC5;
+  box-shadow: 10px 10px 0 0 #343a41;
+}
+
+.title h2{
+  color: black;
+  font-weight: 500;
+  font-size: 26px;
+  padding: 10px;
+}
+
+.subtitle{
+  margin-top: 100px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.contenido{
+  background-color: #1F5C60;
+  display: flex;
+  width: 30%;
+  justify-content: center;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.contenido h3{
+  color: black;
+  font-weight: 500;
+  font-size: 1.5rem;
+  padding: 10px;
+}
+h3:hover{
+  text-shadow: 3px 8px 3px #343a41;
+  animation: alzar 3s infinite;
+}
+@keyframes alzar{
+  0%{
+    transform: translateY(-10%) translateX(-10%);
+
+  }
+  50%{
+    transform: translateY(0);
+  }
+  100%{
+    transform: translateY(-10%) translateX(-10%);
+  }
+}
+
+@media ( min-width: 425px) and (max-width: 740px){
+  .contenido{
+    background-color: #1F5C60;
+    display: flex;
+    width: 45%;
+    justify-content: center;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+
+  .contenido h3{
+    color: black;
+    font-weight: 500;
+    font-size: 1.5rem;
+    padding: 10px;
+  }
+}
+
+@media ( min-width: 320px) and (max-width: 425px){
+
+  .contenido{
+    background-color: #1F5C60;
+    display: flex;
+    width: 60%;
+    justify-content: center;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+
+  .contenido h3{
+    color: black;
+    font-weight: 500;
+    font-size: 1.3rem;
+    padding: 10px;
+  }
+}
+
+@media ( min-width: 20px) and (max-width: 320px){
+
+  .subtitle{
+    margin-top: 100px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .contenido{
+    background-color: #1F5C60;
+    display: flex;
+    width: 60%;
+    justify-content: center;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+
+  .contenido h3{
+    color: black;
+    font-weight: 500;
+    font-size: 1.3rem;
+    padding: 10px;
+  }
+}

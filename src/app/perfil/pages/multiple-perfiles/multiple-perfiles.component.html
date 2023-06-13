@@ -1,0 +1,25 @@
+<section class="bg"></section>
+<section class="bg bg2"></section>
+<section class="bg bg3"></section>
+<h1>MULTIPLES USUARIOS</h1>
+  <div class="container">
+    <div id="carousel">
+      <figure *ngFor="let item of listaResult">
+        <section id="titulo_nombre">
+          <p>{{item.name.first + " " + item.name.last}}</p>
+        </section>
+        <section class="perfil_circle">
+          <img src="{{item?.picture.large}}" alt="" id="imagen">
+        </section>
+        <section class="perfil_body">
+          <img src="./assets/correo-electronico.png"  id="correo_img" alt="" width="25px" (click)="mostrar(item?.email, 'email')">
+          <img src="./assets/acceso.png"  id="acceso_img" alt="" width="25px" (click)="mostrar(item?.name.first + ' ' + item?.name.last, 'first name' )">
+          <img src="./assets/perfil.png"  id="perfil_img" alt="" width="25px" (click)="mostrar(item?.login.username, 'username')">
+          <img src="./assets/localizacion.png" id="localizacion_img" alt="" width="25px" (click)="mostrar(item?.location.country, 'country')">
+          <img src="./assets/navegacion.png" id="navegacion_img"  alt="" width="25px" (click)="mostrar(item?.phone, 'phone')">
+          <!-- <img src="./assets/sexo.png"  id="sexo_img" alt="" width="35px" (click)="mostrar(item.email)"> -->
+          <!-- <img src="./assets/cerrar-con-llave.png"  id="cerrar_img" alt="" width="35px" (click)="mostrar(item.id.name)"> -->
+        </section>
+      </figure>
+    </div>
+  </div>

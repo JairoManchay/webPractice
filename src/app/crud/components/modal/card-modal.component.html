@@ -1,0 +1,16 @@
+<ng-template #loading>
+  <section class="loading">
+    <img
+    src="./assets/svg/circle.svg"
+    class="mt-3">
+  </section>
+</ng-template>
+
+
+<section class="container" *ngIf="mostrarModal; else loading">
+  <section class="modal">
+    <h4>{{tipo_user}}</h4>
+    <h4>Gracias por esperar...</h4>
+    <button class="btn btn-success button mt-2" [routerLink]="['/crudPrincipal/vistaC']">INICIO</button>
+  </section>
+</section>

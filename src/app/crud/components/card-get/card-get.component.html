@@ -1,0 +1,81 @@
+
+<ng-template #mostrar>
+  <article class="card_1">
+    <article class="cuadro_central">
+      <article class="formGroup">
+        <form action="" [formGroup]="myForm">
+          <article class="foto_user">
+            <span class="label" *ngIf="!previsualizacion">Subir imagen</span>
+            <input
+              type="file"
+              formControlName="alt_img"
+              (change)="capturarImagen($event)"
+              id="subir_img"
+            />
+            <section  *ngIf="previsualizacion">
+              <img [src]="previsualizacion" id="img"/>
+            </section>
+          </article>
+
+          <article class="cuadro_informativo">
+            <article class="input_principales">
+              <label for="" id="nombre">
+                <span>Nombre</span>
+                <input
+                  type="text"
+                  placeholder="Escriba su nombre"
+                  formControlName="name"
+                  />
+              </label>
+
+              <label for="">
+                <span>Email</span>
+                <input
+                  type="text"
+                  placeholder="Escriba su nombre"
+                  formControlName="email"
+                  />
+              </label>
+            </article>
+
+            <article class="selects">
+              <label for="">
+                <span>GENDER</span>
+                <select name="gender" formControlName="gender">
+                  <option
+                    *ngFor="let item of genderChoose"
+                    value="{{item.value}}" id="selected"
+                    >{{item.value}}</option>
+                </select>
+              </label>
+
+              <label for="">
+                <span>STATUS</span>
+                <select name="status" formControlName="status">
+                  <option
+                    *ngFor="let item of statusChoose"
+                    value="{{item.value}}">
+                  {{item.value}}</option>
+                </select>
+              </label>
+
+            </article>
+          </article>
+
+          <article class="boton_grabar">
+            <button type="submit" id="grabar" (click)="cargarDatos()">
+              GRABAR
+              <img src="/assets/salvar.png" alt="" id="disco_guardar" />
+            </button>
+          </article>
+        </form>
+      </article>
+    </article>
+  </article>
+
+</ng-template>
+
+<section *ngIf="creado; else mostrar">
+  <app-card-modal [tipo_user]="'USUARIO CREADO CORRECTAMENTE'"></app-card-modal>
+</section>
+

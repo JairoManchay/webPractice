@@ -1,0 +1,81 @@
+<ng-template #actualizar>
+  <article class="card_1">
+    <article class="cuadro_central">
+      <article class="formGroup">
+        <form action="" [formGroup]="myForm">
+
+          <section class="cuadro_iconos">
+
+            <section class="icono_edit">
+              <img src="./assets/cheque.png" alt="" (click)="onSubmit()">
+            </section>
+
+            <section class="icono_borrar">
+              <img src="./assets/borrar.png" (click)="onDelete()" alt="">
+            </section>
+
+          </section>
+
+
+            <article class="foto_user" >
+              <img [src]="currentUser|imagen" alt="Imagen de perfil" id="imagen">
+            </article>
+
+
+
+          <article class="cuadro_informativo">
+            <article class="input_principales">
+              <label for="" id="nombre">
+                <span>Nombre</span>
+                <input
+                  type="text"
+                  formControlName="name"
+                  />
+              </label>
+
+              <label for="">
+                <span>Email</span>
+                <input
+                  type="text"
+                  placeholder="Escribe tu email"
+                  formControlName="email"
+                  />
+              </label>
+            </article>
+
+            <article class="selects">
+              <label for="">
+                <span>GENDER</span>
+                <select name="gender" formControlName="gender">
+                  <option
+                    *ngFor="let item of genderChoose"
+                    value="{{item.value}}" id="selected"
+                    >{{item.value | titlecase}}</option>
+                </select>
+              </label>
+
+              <label for="">
+                <span>STATUS</span>
+                <select name="status" formControlName="status">
+                  <option
+                    *ngFor="let item of statusChoose"
+                    value="{{item.value}}"
+                  >{{item.value | titlecase}}</option>
+                </select>
+              </label>
+
+            </article>
+          </article>
+
+
+        </form>
+      </article>
+    </article>
+  </article>
+</ng-template>
+
+
+<section *ngIf="mostrarMensaje; else actualizar">
+  <app-card-modal [tipo_user]="texto"></app-card-modal>
+</section>
+

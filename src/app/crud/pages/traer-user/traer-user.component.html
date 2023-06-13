@@ -1,0 +1,67 @@
+<section class="container-fluid">
+
+  <app-share-header [method]="GET"></app-share-header>
+
+  <section class="contenido_cards" *ngIf="loadStatus!=false; else loadTrue">
+    <article class="card_1 mb-3" *ngFor="let item of listArr">
+      <article class="cuadro_central mb-3">
+
+        <article class="edit_pencil">
+          <img src="./assets/editar.png" alt="" width="35px" id="editar_image" [routerLink]="['/crudPrincipal/editarC', item.id]">
+        </article>
+
+        <article class="foto_user" *ngIf="item.gender=='female'; else mostrarVaron">
+          <img src="./assets/perfil_mujer.webp" alt="Imagen de perfil" id="imagen">
+        </article>
+        <ng-template #mostrarVaron>
+          <article class="foto_user">
+            <img src="./assets/perfil_varon.webp" alt="Imagen de perfil" id="imagen">
+          </article>
+        </ng-template>
+
+
+        <article class="information">
+          <form action="">
+            <article class="input_principales">
+              <label for="">
+                <span>Nombre</span>
+                <input type="text" [value]="item.name" disabled>
+              </label>
+
+              <label for="">
+                <span>Email</span>
+                <input type="text" [value]="item.email" disabled>
+              </label>
+            </article>
+
+            <article class="status">
+              <label for="">
+                <span>STATUS</span>
+                <select disabled>
+                  <option>{{item.status | status}}</option>
+                </select>
+              </label>
+
+            </article>
+          </form>
+        </article>
+
+      </article>
+    </article>
+
+    <article class="plus">
+        <img src="./assets/boton-circular-plus.png" alt="" id="imagen_create" routerLink="/crudPrincipal/crearC">
+    </article>
+
+  </section>
+
+
+  <ng-template #loadTrue>
+    <section class="loading">
+      <img
+      src="./assets/svg/circle.svg"
+      class="mt-3">
+    </section>
+  </ng-template>
+
+</section>

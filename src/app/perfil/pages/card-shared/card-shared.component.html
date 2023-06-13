@@ -1,0 +1,24 @@
+<section class="card_1" *ngFor="let item2 of listaResult">
+  <section class="cabecera_card" *ngFor="let item of listadInfo">
+    <img src="./assets/editar.png"  id="editar_img" alt="" width="35px" [routerLink]="['/perfil/edit', item?.seed]">
+    <!-- <img src="./assets/editar.gif"  id="editar_img" alt="" width="35px" > -->
+  </section>
+
+  <section class="perfil_circle">
+    <img src="{{item2?.picture.large}}" alt="" id="imagen">
+  </section>
+
+  <section class="card_resultado">
+    <p>{{result}}</p>
+  </section>
+
+  <section class="perfil_body">
+    <img src="./assets/correo-electronico.png"  id="correo_img" alt="" width="35px" (click)="mostrar(item2?.email, 'email')">
+    <img src="./assets/acceso.png"  id="acceso_img" alt="" width="35px" (click)="mostrar(item2?.name.first + ' ' + item2?.name.last, 'first name' )">
+    <img src="./assets/perfil.png"  id="perfil_img" alt="" width="35px" (click)="mostrar(item2?.login.username, 'username')">
+    <img src="./assets/localizacion.png" id="localizacion_img" alt="" width="35px" (click)="mostrar(item2?.location.country, 'country')">
+    <img src="./assets/navegacion.png" id="navegacion_img"  alt="" width="35px" (click)="mostrar(item2?.phone, 'phone')">
+    <!-- <img src="./assets/sexo.png"  id="sexo_img" alt="" width="35px" (click)="mostrar(item.email)"> -->
+    <!-- <img src="./assets/cerrar-con-llave.png"  id="cerrar_img" alt="" width="35px" (click)="mostrar(item.id.name)"> -->
+  </section>
+</section>
